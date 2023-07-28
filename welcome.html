@@ -174,6 +174,21 @@
         <a class="navbar-brand" href="#"><span id="fullname"></span></a>
       </div>
 </nav>
+<!-- Modal -->
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Announcement</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+            <strong>PAALALA:</strong> Trial period ng allowance request sa apps ay tapos na. Ngayong natutunan na ng lahat paano ito gamitin, magiging bukas na lamang ito sa isang partikular na araw. Ugaliing magpasa ng allowance request tuwing Biyernes kasama ng schedule para sa susunod na linggo. Bukas na lamang ang allowance request form sa app tuwing Biyernes at isasara na sa ibang mga araw. Salamat.
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Modal -->
       <!-- End of Add Test -->
       <script src="js/jquery-1.12.4.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -230,5 +245,11 @@
 </script>
 <script src="js/custom.js"></script>
 <script src="js/app.js" async></script>
+
+  <script>
+    $(document).ready(function(){
+        $("#myModal").modal('show');
+    });
+</script>
     </body>
 </html>
