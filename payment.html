@@ -53,6 +53,29 @@
             <input id="date" type="date" name="date" class="form-control" readonly>
           </div>
           <div class="form-group">
+            <label>Mode of Payment</label>
+            <select id="mpayment" name="mpayment" class="form-control">
+              <option value="cash" selected>Cash</option>
+              <option value="gcash">GCash</option>
+              <option value="check">Check</option>
+              <option value="bank">Bank</option>
+            </select>
+          </div>
+          <div class="form-group" id="gcashref" style="display:none;">
+            <label>GCash Reference No.</label>
+            <input type="text" name="gcashref" class="form-control">
+          </div>
+          <div class="form-group" id="checkref" style="display:none;">
+            <label>Check Number</label>
+            <input type="text" name="checkno" class="form-control">
+            <label>Bank Name</label>
+            <input type="text" name="checkbank" class="form-control">
+          </div>
+          <div class="form-group" id="bankref" style="display:none;">
+            <label>Bank Reference No.</label>
+            <input type="text" name="bankref" class="form-control">
+          </div>
+          <div class="form-group">
             <label>Type of Receipt</label>
             <select class="form-control" name="type-of-receipt">
               <option value="or" selected>OR</option>
@@ -143,5 +166,28 @@
           });
 
         </script>
+        <script type="text/javascript">
+          $(function() {
+          $('#mpayment').change(function(){
+              if($('#mpayment').val() == 'gcash') {
+                  $('#gcashref').show();
+                  $('#checkref').hide();
+                  $('#bankref').hide();
+              }else if($('#mpayment').val() == 'check') {
+                  $('#gcashref').hide();
+                  $('#checkref').show();
+                  $('#bankref').hide(); 
+              }else if($('#mpayment').val() == 'bank') {
+                  $('#gcashref').hide();
+                  $('#checkref').hide();
+                  $('#bankref').show(); 
+              }else {
+                  $('#gcashref').hide();
+                  $('#checkref').hide();
+                  $('#bankref').hide(); 
+              } 
+          });
+      });
+</script>
 </body>
 </html>
