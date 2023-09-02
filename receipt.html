@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="style.css">
         <title>Receipt example</title>
         <style>
             * {
@@ -63,45 +62,39 @@ img {
 }
         </style>
     </head>
-    <body>
+    <body style="marging:15px;">
         <div class="ticket">
             <img src="./logo.png" alt="Logo">
-            <p class="centered">WWT Laboratory Inc
-                <br>Address line 1
-                <br>Address line 2</p>
+            <p class="centered">WWT Laboratory Inc.</p>
+            <p id="demo" class="centered"></p>
+            <p>Name : <br>Address: </p>
             <table>
                 <thead>
                     <tr>
-                        <th class="quantity"></th>
                         <th class="description">Description</th>
-                        <th class="price"></th>
+                        <th class="price">Amount</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="quantity">1</td>
-                        <td class="description">Microbiological</td>
+                        <td class="description">1 Microbiological</td>
                         <td class="price">700.00</td>
                     </tr>
                     <tr>
-                        <td class="quantity">1</td>
-                        <td class="description">PChem</td>
+                        <td class="description">1 PChem</td>
                         <td class="price">3500.00</td>
                     </tr>
                     <tr>
-                        <td class="quantity">1</td>
-                        <td class="description">Bacteriological</td>
+                        <td class="description">1 Bacteriological</td>
                         <td class="price">310.00</td>
                     </tr>
                     <tr>
-                        <td class="quantity"></td>
                         <td class="description">TOTAL</td>
                         <td class="price">$55.00</td>
                     </tr>
                 </tbody>
             </table>
             <p class="centered">Thanks for your purchase!<br>Collector</p>
-            <p id="demo" class="centered"></p>
 
 <script>
 // get a new date (locale machine date time)
@@ -125,6 +118,5 @@ $btnPrint.addEventListener("click", () => {
     window.print();
 });
         </script>
-        <script src="script.js"></script>
     </body>
 </html>
