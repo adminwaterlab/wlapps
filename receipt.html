@@ -18,6 +18,7 @@ tr,
 table {
     border-top: 1px solid black;
     border-collapse: collapse;
+    width: 100%;
 }
 
 td.description,
@@ -46,8 +47,7 @@ th.price {
 }
 
 .ticket {
-    width: 155px;
-    max-width: 155px;
+    width: 100%;
 }
 
 img {
@@ -66,32 +66,30 @@ img {
     <body>
         <div class="ticket">
             <img src="./logo.png" alt="Logo">
-            <p class="centered">RECEIPT EXAMPLE
-                <br>Address line 1
-                <br>Address line 2</p>
+            <p class="centered">WWT Laboratory Inc.</p>
             <table>
                 <thead>
                     <tr>
-                        <th class="quantity">Q.</th>
+                        <th class="quantity"></th>
                         <th class="description">Description</th>
-                        <th class="price">$$</th>
+                        <th class="price">Amount</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="quantity">1.00</td>
-                        <td class="description">ARDUINO UNO R3</td>
-                        <td class="price">$25.00</td>
+                        <td class="quantity">1</td>
+                        <td class="description">Microbiological</td>
+                        <td class="price">700.00</td>
                     </tr>
                     <tr>
-                        <td class="quantity">2.00</td>
-                        <td class="description">JAVASCRIPT BOOK</td>
-                        <td class="price">$10.00</td>
+                        <td class="quantity">1</td>
+                        <td class="description">PChem</td>
+                        <td class="price">3500.00</td>
                     </tr>
                     <tr>
-                        <td class="quantity">1.00</td>
-                        <td class="description">STICKER PACK</td>
-                        <td class="price">$10.00</td>
+                        <td class="quantity">1</td>
+                        <td class="description">Bacteriological</td>
+                        <td class="price">310.00</td>
                     </tr>
                     <tr>
                         <td class="quantity"></td>
@@ -100,8 +98,23 @@ img {
                     </tr>
                 </tbody>
             </table>
-            <p class="centered">Thanks for your purchase!
-                <br>parzibyte.me/blog</p>
+            <p class="centered">Thanks for your purchase!<br>Collector</p>
+            <p id="demo" class="centered"></p>
+
+<script>
+// get a new date (locale machine date time)
+var date = new Date();
+// get the date as a string
+var n = date.toDateString();
+// get the time as a string
+var time = date.toLocaleTimeString();
+
+// log the date in the browser console
+console.log('date:', n);
+// log the time in the browser console
+console.log('time:',time);
+document.getElementById("demo").innerHTML = n + time;
+</script>
         </div>
         <button id="btnPrint" class="hidden-print">Print</button>
         <script>
