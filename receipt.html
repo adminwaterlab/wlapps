@@ -8,7 +8,7 @@
         <style>
             * {
     font-size: 12px;
-    font-family: 'Times New Roman';
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 
 td,
@@ -66,8 +66,8 @@ h3{
 #qrcode img{
     width: 70px !important;
 }
-#information{
-    font-size: 16px;
+#information,#footer p{
+    font-size: 16px !important;
 }
 
 @media print {
@@ -99,9 +99,11 @@ h3{
                     </tr>
                 </tbody>
             </table>
-            <p>Mode of Payment: <span id="mpayment"></span></p>
-            <p>Ref : <span id="salesid"></span></p>
+            <div id="footer">
+            <p class="centered">Mode of Payment: <span id="mpayment"></span></p>
+            <p class="centered">Ref : <span id="salesid"></span></p>
             <p class="centered">Collector : <span id="collector"></span></p>
+            </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js" integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
