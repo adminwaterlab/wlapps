@@ -7,7 +7,7 @@
         <title>Receipt example</title>
         <style>
             * {
-    font-size: 12px;
+    font-size: 16px;
     font-family: "Lucida Console", "Courier New", monospace;
     font-weight: bolder !important;
 }
@@ -64,8 +64,11 @@ h3{
           justify-content: center;
           align-items: center;
         }
-#qrcode img{
-    width: 70px !important;
+
+@media (min-width:480px)  {
+    #qrcode img{
+        width: 70px !important;
+    }
 }
 #information,#footer p{
     font-size: 16px !important;
@@ -180,7 +183,7 @@ var time = date.toLocaleTimeString();
 console.log('date:', n);
 // log the time in the browser console
 console.log('time:',time);
-document.getElementById("demo").innerHTML = n + time;
+document.getElementById("demo").innerHTML = n +"<br/>"+ time;
 </script>
         </div>
         <button id="btnPrint" class="hidden-print">Print</button>
