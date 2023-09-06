@@ -145,8 +145,12 @@ $.ajax({
 
                 if (typetest = 8) {
                   document.getElementById("typetest").innerHTML = "Bacteriological Analysis";
+                }elseif(typetest = 3){
+                    document.getElementById("typetest").innerHTML = "Microbiological Analysis";
+                }elseif(typetest = 0){
+                    document.getElementById("typetest").innerHTML = "Custom Parameters";
                 }else{
-                    document.getElementById("typetest").innerHTML = typetest;
+                    document.getElementById("typetest").innerHTML = "Physical-Chemical Analysis";
                 }
 
                 //$("#userTable tbody").append(tr_str);
