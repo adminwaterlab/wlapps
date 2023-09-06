@@ -70,7 +70,7 @@ h3{
             <p><br /><br /><br /></p>
             <p class="centered"><h3>WWT Laboratory Inc.</h3></p>
             <p id="demo"></p>
-            <p>Name : <span id="payer"></span><br>Address: <span id="municipality"></span> <span id="province"></span></p>
+            <p>Name : <span id="clientname"></span><br>Address: <span id="municipality"></span> <span id="province"></span></p>
             <table>
                 <thead>
                     <tr>
@@ -80,7 +80,7 @@ h3{
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="description">1 Bacteriological</td>
+                        <td class="description" id="typetest"></td>
                         <td class="price" id="amount"></td>
                     </tr>
                 </tbody>
@@ -91,7 +91,7 @@ h3{
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <p class="centered" id="qrcode-2"></p>
 <p class="centered">*********************************</p>
-<p class="centered">THANK YOU!!</p>
+<p class="centered">THANK YOU!!1</p>
 <p class="centered">*********************************</p>
 <script type="text/javascript">
     $(document).ready(function(){
@@ -114,14 +114,18 @@ $.ajax({
                 var amount = response[i].amount;
                 var municipality = response[i].municipality;
                 var province = response[i].province;
+                var clientname = response[i].clientname;
+                var typetest = response[i].typetest;
 
                 document.getElementById("salesid").innerHTML = sales_id;
                 document.getElementById("mpayment").innerHTML = mpayment;
                 document.getElementById("amount").innerHTML = amount;
-                document.getElementById("payer").innerHTML = payer;
+                //document.getElementById("payer").innerHTML = payer;
                 document.getElementById("collector").innerHTML = collector;
                 document.getElementById("municipality").innerHTML = municipality;
                 document.getElementById("province").innerHTML = province;
+                document.getElementById("clientname").innerHTML = clientname;
+                document.getElementById("typetest").innerHTML = typetest;
 
                 //$("#userTable tbody").append(tr_str);
                 //console.log(collector);
