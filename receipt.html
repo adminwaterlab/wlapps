@@ -56,6 +56,15 @@ img {
 h3{
     font-size: 16px;
 }
+#qrcode {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+#qrcode img{
+    width: 150px !important;
+}
 
 @media print {
     .hidden-print,
@@ -90,7 +99,9 @@ h3{
             <p>Ref : <span id="salesid"></span></p>
             <p class="centered">Collector : <span id="collector"></span></p>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<p class="centered" id="qrcode-2"></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js" integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div id="qrcode"></div>
 <p class="centered">*********************************</p>
 <p class="centered">THANK YOU!!!</p>
 <p class="centered">*********************************</p>
@@ -100,6 +111,7 @@ h3{
 var url = new URL(url_string);
 var c = url.searchParams.get("sales_id");
 console.log(c);
+var qrcode = new QRCode("qrcode",c);
 
 $.ajax({
         url: "https://newsytem.webphilservices.online/webapi.php?sales_id="+c,
