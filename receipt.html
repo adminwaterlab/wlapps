@@ -18,6 +18,7 @@ table {
     border-top: 1px solid black;
     border-collapse: collapse;
     width: 100%;
+    font-size: 16px;
 }
 
 td.description,
@@ -63,7 +64,7 @@ h3{
           align-items: center;
         }
 #qrcode img{
-    width: 100px !important;
+    width: 70px !important;
 }
 
 @media print {
@@ -138,11 +139,17 @@ $.ajax({
                 document.getElementById("municipality").innerHTML = municipality;
                 document.getElementById("province").innerHTML = province;
                 document.getElementById("clientname").innerHTML = clientname;
-                document.getElementById("typetest").innerHTML = typetest;
+
+                if (typetest = 8) {
+                  document.getElementById("typetest").innerHTML = "Bacteriological Analysis";
+                }else{
+                    document.getElementById("typetest").innerHTML = typetest;
+                }
 
                 //$("#userTable tbody").append(tr_str);
                 //console.log(collector);
             }
+
 
         }
     });
