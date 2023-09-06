@@ -67,7 +67,7 @@ img {
             <p><br /><br /><br /></p>
             <p class="centered"><h3>WWT Laboratory Inc.</h3></p>
             <p id="demo"></p>
-            <p>Name : <br>Address: </p>
+            <p>Name : <span id="payer"></span><br>Address: <span id="municipality"></span> <span id="province"></span></p>
             <table>
                 <thead>
                     <tr>
@@ -86,18 +86,55 @@ img {
                     </tr>
                     <tr>
                         <td class="description">1 Bacteriological</td>
-                        <td class="price">310.00</td>
-                    </tr>
-                    <tr>
-                        <td class="description">TOTAL</td>
-                        <td class="price">$55.00</td>
+                        <td class="price" id="amount"></td>
                     </tr>
                 </tbody>
             </table>
-            <p class="centered"><h3>THANK YOU!!</h3><br>Collector</p>
+            <p>Mode of Payment: <span id="mpayment"></span></p>
+            <p>Ref : <span id="salesid"></span></p>
+            <p class="centered"><h3>THANK YOU!!</h3><br>Collector : <span id="collector"></span></p>
             <p><br /><br /><br />_____</p>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+    var url_string = new URL(window.location.toLocaleString());
+var url = new URL(url_string);
+var c = url.searchParams.get("sales_id");
+console.log(c);
 
+$.ajax({
+        url: "https://newsytem.webphilservices.online/webapi.php?sales_id="+c,
+        type: "get",
+        dataType: "JSON",
+        success: function(response){
+            var len = response.length;
+            for(var i=0; i<len; i++){
+                var sales_id = response[i].salesid;
+                var collector = response[i].collector;
+                var payer = response[i].payer;
+                var mpayment = response[i].mpayment;
+                var amount = response[i].amount;
+                var municipality = response[i].municipality;
+                var province = response[i].province;
+
+                document.getElementById("salesid").innerHTML = sales_id;
+                document.getElementById("mpayment").innerHTML = mpayment;
+                document.getElementById("amount").innerHTML = amount;
+                document.getElementById("payer").innerHTML = payer;
+                document.getElementById("collector").innerHTML = collector;
+                document.getElementById("municipality").innerHTML = municipality;
+                document.getElementById("province").innerHTML = province;
+
+                //$("#userTable tbody").append(tr_str);
+                //console.log(collector);
+            }
+
+        }
+    });
+});
+</script>
 <script>
+
 // get a new date (locale machine date time)
 var date = new Date();
 // get the date as a string
