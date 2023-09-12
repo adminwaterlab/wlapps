@@ -78,8 +78,8 @@
                 /*console.log(value);*/
                 event_data += '<div class="panel panel-default>';
                 event_data += '<div class="panel-heading><div class="panel-heading">From : '+value.message_from+'</div></div>';
-                event_data += '<div class="panel-body">'+value.message_content+'</div>';
-                event_data += '<div class="panel-footer">'+value.message_created+'</div>';
+                event_data += '<div class="panel-body">'+value.message_content+'<br>created on : '+value.message_created+'</div>';
+                event_data += '<div class="panel-footer"><a href="#" onclick="updatereminders()"class="btn btn-primary float-right">Reply Done</a><br /><span id="replymsg"></span></div>';
                 event_data += '</div>';
             });
             $("#div1").append(event_data);
@@ -90,6 +90,21 @@
         }
     });
 });
+ //Update reminders
+  function updatereminders(){
+  //e.preventDefault();
+  var url_string = window.location.href;
+  var url = new URL(url_string);
+  var c = url.searchParams.get("readremindersid");
+
+  $.ajax({
+        type: 'get',
+        url: 'https://newsytem.webphilservices.online/api/myapi.php?updateremainders='+c,
+        success: function (result) {
+          $("#replymsg").html(result);
+        }
+      });
+};
 </script>
 <script src="js/custom.js"></script>
     </body>
