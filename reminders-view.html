@@ -78,7 +78,7 @@
                 /*console.log(value);*/
                 event_data += '<div class="panel panel-default>';
                 event_data += '<div class="panel-heading><div class="panel-heading">From : '+value.message_from+'</div></div>';
-                event_data += '<div class="panel-body">'+value.message_content+'<br>created on : '+value.message_created+'</div>';
+                event_data += '<div class="panel-body"><p></p>'+value.message_content+'<br>created on : '+value.message_created+'</div>';
                 event_data += '<div class="panel-footer"><a href="#" onclick="updatereminders()"class="btn btn-primary float-right">Reply Done</a><br /><span id="replymsg"></span></div>';
                 event_data += '</div>';
             });
@@ -102,6 +102,7 @@
         url: 'https://newsytem.webphilservices.online/api/myapi.php?updateremainders='+c,
         success: function (result) {
           $("#replymsg").html(result);
+          window.location.href = "reminders.html";
         }
       });
 };

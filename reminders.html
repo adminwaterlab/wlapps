@@ -13,6 +13,12 @@
     <link href="fontawesome/css/all.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
     <script src="js/ie-emulation-modes-warning.js"></script>
+    <style type="text/css">
+      #DONE{
+        background-color: green;
+        color: #ffffff;
+      }
+    </style>
     </head>
     <body>
       <!-- Fixed navbar -->
@@ -92,7 +98,7 @@
             var event_data = '';
             $.each(data, function(index, value){
                 /*console.log(value);*/
-                event_data += '<tr class="'+value.message_status+'">';
+                event_data += '<tr class="'+value.message_status+'" id="'+value.messagereply+'">';
                 event_data += '<td>'+value.message_created+'</td>';
                 event_data += '<td>'+value.message_from+'</td>';
                 event_data += '<td><a href="'+value.link+'">'+value.message_content+'</a></td>';
