@@ -123,8 +123,9 @@
       $('input[name="amount"]').keyup(function() {
         var amount2 = $('input[name="amount2"]').val();
     var result = $('input[name="amount"]').val();
+   // var result = result1.toString().match(/^-?\d+(?:\.\d{0,2})?/)[0];
     
-    if(result > amount2){
+    if(parseInt(result) > amount2){
       $('#messageamount').html("Value is greater than the amount.");
       $(':input[type="submit"]').prop('disabled', true);
     } else {
