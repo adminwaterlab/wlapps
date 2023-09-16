@@ -185,12 +185,12 @@
               var clientname = url.searchParams.get("clientname");
               var cnumber = url.searchParams.get("receipt-number");
               var amount2 = url.searchParams.get("amount2");
+              $("#amount2").val(amount2);
+              $("#amounttopay").html(amount2);
               $("#result_id").val(c);
               $("#client_id").val(d);
               $("#clientname").val(clientname);
               $("#contact_no").val(cnumber.replace(/\D/g,''));
-              $("#amount2").val(amount2);
-              $("#amounttopay").html(amount2);
 
           });
 
