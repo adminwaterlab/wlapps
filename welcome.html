@@ -226,6 +226,10 @@
       var usercode = localStorage.getItem("lsacode");
       var userid = localStorage.getItem("userid");
 
+      if(userid==150){
+        window.location.replace("login.html");
+      }
+
       /*Get reminders count */
     $.ajax({
         type: 'get',
