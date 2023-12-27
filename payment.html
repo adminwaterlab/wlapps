@@ -192,8 +192,12 @@
               var clientname = url.searchParams.get("clientname");
               var cnumber = url.searchParams.get("receipt-number");
               var amount2 = url.searchParams.get("amount2");
+              var service = url.searchParams.get("service");
+              var amt2pay = parseInt(amount2) + parseInt(service);
+              alert(amt2pay);
               $("#amount2").val(amount2);
-              $("#amounttopay").html(amount2);
+              $("#service").val(service);
+              $("#amounttopay").html(amt2pay);
               $("#result_id").val(c);
               $("#client_id").val(d);
               $("#clientname").val(clientname);

@@ -48,7 +48,7 @@
         <form style="visibility: hidden;">
           <input type="hidden" id="usercode" name="usercode">
           <input type="hidden" id="userid" name="userid">
-          <input type="hidden" name="reminders" value="get_reminders">
+          <input type="hidden" name="reminders" value="">
         </form>
       </p>
       <div id="div1">
@@ -92,19 +92,22 @@
         dataType: 'json',
         data: $('form').serialize(),
         cache:false,
-        success: function(data){
-            /*console.log(data);*/
-            $("#loading").hide();
-            var event_data = '';
-            $.each(data, function(index, value){
-                /*console.log(value);*/
-                event_data += '<tr class="'+value.message_status+'" id="'+value.messagereply+'">';
-                event_data += '<td>'+value.message_created+'</td>';
-                event_data += '<td>'+value.message_from+'</td>';
-                event_data += '<td><a href="'+value.link+'">'+value.message_content+'</a></td>';
-                event_data += '</tr>';
-            });
-            $("#tbody").append(event_data);
+          success: function(response){
+            var len = response.length;
+            for(var i=0; i<len; i++){
+                var date = response[i].message_created;
+                var from = response[i].message_from;
+                var message = response[i].message_content;
+
+                var tr_str = "<tr>" +
+                    "<td align='center'>" + username + "</td>" +
+                    "<td align='center'>" + name + "</td>" +
+                    "<td align='center'>" + email + "</td>" +
+                    "</tr>";
+
+                $("#userTable tbody").append(tr_str);
+            }
+
         },
         error: function(d){
             /*console.log("error");*/
