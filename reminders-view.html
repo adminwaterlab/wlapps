@@ -66,7 +66,7 @@
   $("#userid").val(localStorage.getItem("userid"));
   $("#loading").show();
     $.ajax({
-        url: "https://newsytem.webphilservices.online/api/myapi.php?readremindersid="+c,
+        url: "https://myapps.webphilservices.site/api/myapi.php?readremindersid="+c,
         type: 'get',
         dataType: 'json',
         cache:false,
@@ -99,7 +99,7 @@
 
   $.ajax({
         type: 'get',
-        url: 'https://newsytem.webphilservices.online/api/myapi.php?updateremainders='+c,
+        url: 'https://myapps.webphilservices.site/api/myapi.php?updateremainders='+c,
         success: function (result) {
           $("#replymsg").html(result);
           window.location.href = "reminders.html";

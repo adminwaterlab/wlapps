@@ -135,7 +135,7 @@
       link.setAttribute('href', "account.html?customer_id="+c);
 
       $.ajax({
-        url: 'https://newsytem.webphilservices.online/api/client.php?editclient=&id='+c,
+        url: 'https://myapps.webphilservices.site/api/client.php?editclient=&id='+c,
         type: 'get',
         dataType: 'JSON',
         success: function(response){
@@ -159,7 +159,7 @@
               $('#loading').show();
               $.ajax({
                 type: "GET",
-                url: "https://newsytem.webphilservices.online/api/client.php",
+                url: "https://myapps.webphilservices.site/api/client.php",
                 data: $('form').serialize(),
                 success: function (result) {
                   $('#loading').hide();

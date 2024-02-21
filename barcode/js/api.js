@@ -6,7 +6,7 @@ $(function () {
     $('#loading').show();
     $.ajax({
       type: 'get',
-      url: 'https://newsytem.webphilservices.online/api/verification.php',
+      url: 'https://myapps.webphilservices.site/api/verification.php',
       data: $('form').serialize(),
       success: function (result) {
         $('#loading').hide();
